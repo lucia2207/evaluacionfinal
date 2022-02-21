@@ -1,10 +1,23 @@
 package evaluacionfinal;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main (String[] args) {
-        // Ejercicio 1
-        int nro1 = 2 ;
-        int nro2 = 6 ;
+        // Ejercicio 2
+        int nro1 = 0 ;
+        int nro2 = 0 ;
+
+        Scanner eConsola= new Scanner(System.in);
+        System.out.println("Ingrese en la consola el primer valor ");
+        String valorUno = eConsola.nextLine();
+        nro1 = Integer.parseInt(valorUno);
+        System.out.println("El primer valor ingresado fue: "+valorUno);
+        System.out.println("Ingrese un segundo valor");
+        String valorDos = eConsola.nextLine();
+        nro2 = Integer.parseInt(valorDos);
+        System.out.println("Los valores ingresados fueron:"+valorUno+" y "+valorDos);
+
 
         if (nro1 < nro2) {
             System.out.println("El numero " + nro2 + " es mayor que el numero " + nro1);
