@@ -1,11 +1,19 @@
 package evaluacionfinal;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
+        //Ejercicio 3
+        String radiostr;
+        radiostr= JOptionPane.showInputDialog("Ingrese el radio de su circulo");
+        double radio= Double.parseDouble(radiostr);
+        double area= Math.PI * Math.pow(radio,2);
+        System.out.println("El area de su circulo es " +area);
+
         // Ejercicio 2
-        int nro1 = 0 ;
+        /*int nro1 = 0 ;
         int nro2 = 0 ;
 
         Scanner eConsola= new Scanner(System.in);
@@ -26,5 +34,8 @@ public class Main {
         } else {
             System.out.println("Ambos numeros son iguales");
         }
+
+         */
+
     }
 }
