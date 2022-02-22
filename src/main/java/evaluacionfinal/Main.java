@@ -5,15 +5,29 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final int IVA = 21;
+    //public static final int IVA = 21;
     public static void main (String[] args) {
+
+        //EJERCICIO 5
+        int nro = 1;
+
+        while( nro <= 100 ){
+            if(nro % 2 == 0){ // uso el operador modulo , si el nro es divisible entre 2 su resto sera 0.
+                System.out.println("El numero " +nro + " es par");
+            } else {
+                System.out.println("El numero " +nro + " es impar");
+            }
+            nro++;
+        }
+
         //Ejercicio 4
-        String preciostr;
+        /*String preciostr;
         preciostr= JOptionPane.showInputDialog("Ingrese el precio del producto");
         double precio= Double.parseDouble(preciostr);
         double precioFinal= (precio* (100 + IVA)) / 100;
         System.out.println("El precio final del producto es: " +precioFinal);
 
+         */
 
 
         //Ejercicio 3
