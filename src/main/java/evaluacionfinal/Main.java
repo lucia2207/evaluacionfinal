@@ -4,13 +4,26 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
+
+    public static final int IVA = 21;
     public static void main (String[] args) {
+        //Ejercicio 4
+        String preciostr;
+        preciostr= JOptionPane.showInputDialog("Ingrese el precio del producto");
+        double precio= Double.parseDouble(preciostr);
+        double precioFinal= (precio* (100 + IVA)) / 100;
+        System.out.println("El precio final del producto es: " +precioFinal);
+
+
+
         //Ejercicio 3
-        String radiostr;
+        /*String radiostr;
         radiostr= JOptionPane.showInputDialog("Ingrese el radio de su circulo");
         double radio= Double.parseDouble(radiostr);
         double area= Math.PI * Math.pow(radio,2);
         System.out.println("El area de su circulo es " +area);
+
+         */
 
         // Ejercicio 2
         /*int nro1 = 0 ;
