@@ -1,21 +1,27 @@
 package evaluacionfinal;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
-
-    //public static final int IVA = 21;
     public static void main (String[] args) {
 
-        //Ejercicio 6
-        for(int i = 1; i <= 100; i++){
+        //EJERCICIO 7
+        Scanner input = new Scanner(System.in);
+        double num;
+        do{
+            System.out.println("Ingrese un número: ");
+            num = input.nextDouble();
+        }while(num < 0);
+        System.out.println("El número "+num+" es mayor o igual a 0.");
+    }
+}
+//Ejercicio 6
+        /*for(int i = 1; i <= 100; i++){
             if((i % 2) == 0)
                 System.out.println("El número "+i+" es par.");
             else
                 System.out.println("El número "+i+" es impar.");
-        }
-
+        }*/
 
         //EJERCICIO 5
         /*int nro = 1;
@@ -32,6 +38,7 @@ public class Main {
          */
 
         //Ejercicio 4
+        //public static final int IVA = 21;
         /*String preciostr;
         preciostr= JOptionPane.showInputDialog("Ingrese el precio del producto");
         double precio= Double.parseDouble(preciostr);
@@ -74,6 +81,3 @@ public class Main {
         }
 
          */
-
-    }
-}
