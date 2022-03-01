@@ -1,10 +1,19 @@
 package evaluacionfinal;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
-        Scanner input = new Scanner(System.in);
+        //EJERCICIO 13
+        DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        System.out.println("Fecha y hora actual: "+dateTime.format(LocalDateTime.now())+".");
+    }
+}
+
+        //EJERCICIO 12
+        /*Scanner input = new Scanner(System.in);
         System.out.println("Ingrese la primera palabra: ");
         String primeraPalabra = input.nextLine();
         System.out.println("Ingrese la segunda palabra: ");
@@ -29,6 +38,8 @@ public class Main {
         }
     }
 }
+
+         */
         //ejercicio 11
         /*Scanner input = new Scanner(System.in);
         System.out.println("Ingrese una frase: ");
