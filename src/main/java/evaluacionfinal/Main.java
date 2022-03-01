@@ -6,11 +6,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
-        //EJERCICIO 13
-        DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        System.out.println("Fecha y hora actual: "+dateTime.format(LocalDateTime.now())+".");
+    //ejercicio 14
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese un número: ");
+        int numerito = input.nextInt();
+        if(numerito <= 1000){
+            for(int i = numerito; i <= 1000; i += 2)
+                System.out.println(i);
+        } else
+            System.out.println("El número ingresado es mayor que 1000.");
     }
 }
+
+        //EJERCICIO 13
+        //DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        //System.out.println("Fecha y hora actual: "+dateTime.format(LocalDateTime.now())+".");
+
 
         //EJERCICIO 12
         /*Scanner input = new Scanner(System.in);
