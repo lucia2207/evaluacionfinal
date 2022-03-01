@@ -3,9 +3,34 @@ package evaluacionfinal;
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String[] args) {
-        //ejercicio 11
+    public static void main (String[] args){
         Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese la primera palabra: ");
+        String primeraPalabra = input.nextLine();
+        System.out.println("Ingrese la segunda palabra: ");
+        String segunda = input.nextLine();
+        boolean length = true;
+        if(primeraPalabra.equals(segunda))
+            System.out.println("Las palabras son iguales.");
+        else {
+            for (int i = 0; i < Math.max(primeraPalabra.length(), segunda.length()); i++) {
+                try {
+                    char charP1 = primeraPalabra.charAt(i);
+                    char charP2 = segunda.charAt(i);
+                    if (charP1 != charP2)
+                        System.out.println("Los caracteres son diferentes en la posición " + (i + 1) + ". ("+charP1+" distinto de "+charP2+").");
+                } catch (Exception e) {
+                    length = false;
+                }
+            }
+            if(length == false)
+                System.out.println("Las palabras no tienen el mismo largo.");
+            System.out.println("Las palabras son diferentes.");
+        }
+    }
+}
+        //ejercicio 11
+        /*Scanner input = new Scanner(System.in);
         System.out.println("Ingrese una frase: ");
         String frasePasada = input.nextLine();
         int contador = 0;
