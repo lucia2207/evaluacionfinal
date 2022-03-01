@@ -8,8 +8,17 @@ public class Main {
     //public static final int IVA = 21;
     public static void main (String[] args) {
 
+        //Ejercicio 6
+        for(int i = 1; i <= 100; i++){
+            if((i % 2) == 0)
+                System.out.println("El número "+i+" es par.");
+            else
+                System.out.println("El número "+i+" es impar.");
+        }
+
+
         //EJERCICIO 5
-        int nro = 1;
+        /*int nro = 1;
 
         while( nro <= 100 ){
             if(nro % 2 == 0){ // uso el operador modulo , si el nro es divisible entre 2 su resto sera 0.
@@ -19,6 +28,8 @@ public class Main {
             }
             nro++;
         }
+
+         */
 
         //Ejercicio 4
         /*String preciostr;
