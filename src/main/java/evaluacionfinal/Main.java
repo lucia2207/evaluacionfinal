@@ -6,18 +6,47 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
-    //ejercicio 14
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Ingrese un número: ");
-        int numerito = input.nextInt();
-        if(numerito <= 1000){
-            for(int i = numerito; i <= 1000; i += 2)
-                System.out.println(i);
-        } else
-            System.out.println("El número ingresado es mayor que 1000.");
+        //ejercicio 15
+        int opciones;
+        do{
+            System.out.println("****** GESTIÓN CINEMATOGRÁFICA ******\n" +
+                    "1- NUEVO ACTOR\n" +
+                    "2- BUSCAR ACTOR\n" +
+                    "3- ELIMINAR ACTOR\n" +
+                    "4- MODIFICAR ACTOR\n" +
+                    "5- VER TODOS LOS ACTORES\n" +
+                    "6- VER PELICULAS DE LOS ACTORES\n" +
+                    "7- VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES\n" +
+                    "8- SALIR\n");
+            Scanner input = new Scanner(System.in);
+            System.out.println("Ingrese una opción: ");
+            opciones = input.nextInt();
+            switch(opciones){
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    break;
+                default:
+                    System.out.println("El número ingresado no es válido.\n");
+            }
+        }while(opciones != 8);
     }
 }
+    //ejercicio 14
+
+    /*Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese un número: ");
+                int numerito = input.nextInt();
+                if(numerito <= 1000){
+                for(int i = numerito; i <= 1000; i += 2)
+                System.out.println(i);
+                } else
+                System.out.println("El número ingresado es mayor que 1000.");
 
         //EJERCICIO 13
         //DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
