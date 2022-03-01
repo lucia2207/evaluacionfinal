@@ -2,46 +2,97 @@ package evaluacionfinal;
 
 public class Main {
     public static void main (String[] args){
-        //ejercicio 17
-        Lavadora lav1 = new Lavadora();
-        Lavadora lav2 = new Lavadora(100, 50);
-        Lavadora lav3 = new Lavadora(80);
-        Television tv1 = new Television();
-        Television tv2 = new Television(200, 25);
-        Television tv3 = new Television(55, true);
-        Television tv4 = new Television(43, false);
-        Electrodomesticos batidora = new Electrodomesticos();
-        Electrodomesticos licuadora = new Electrodomesticos(100, 1);
-        Electrodomesticos cafetera = new Electrodomesticos(60, "Negro", 'C', 1.5);
 
-        Electrodomesticos[] productos = {lav1, lav2, lav3, tv1, tv2, tv3, tv4, batidora, licuadora, cafetera};
-        double precioTotalLavadora = 0;
-        double precioTotalTelevision = 0;
-        double precioTotalElectrodomesticos = 0;
-        double precio;
-        for (Electrodomesticos producto : productos) {
-            if(producto.getClass() == Lavadora.class){
-                precio = ((Lavadora) producto).precioFinal(((Lavadora) producto).getCarga());
-                precioTotalLavadora += precio;
-                precioTotalElectrodomesticos += precio;
-                System.out.println("Soy una lavadora y mi precio final es de: "+precio+"€.");
-            } else if(producto.getClass() == Television.class){
-                precio = ((Television) producto).precioFinal(((Television) producto).resolucion, ((Television) producto).sintonizadorTDT);
-                precioTotalTelevision += precio;
-                precioTotalElectrodomesticos += precio;
-                System.out.println("Soy una televisión y mi precio final es de: "+precio+"€.");
-            } else if(producto.getClass() == Electrodomesticos.class){
-                precio = producto.precioFinal(producto.precioBase, producto.consumoEnergetico, producto.peso);
-                precioTotalElectrodomesticos += precio;
-                System.out.println("Soy un electrodoméstico y mi precio final es de: "+precio+"€.");
+        Serie serie1 = new Serie("Arcane", 1, "Ciencia ficción", "Christian Linke Alex Yee");
+        Serie serie2 = new Serie("El juego del calamar", 1, "Suspenso", "Hwang Dong-hyuk");
+        Serie serie3 = new Serie("Gambito de dama", "Allan Scott");
+        Serie serie4 = new Serie();
+        Serie serie5 = new Serie("Chicas buenas", 4, "Drama criminal", "Jenna Bans");
+        Serie[] series = {serie1, serie2, serie3, serie4, serie5};
+
+        Videojuego vj1 = new Videojuego();
+        Videojuego vj2 = new Videojuego("League of Legends", 8);
+        Videojuego vj3 = new Videojuego("Valorant", 12, "Shooter", "Riot Games");
+        Videojuego vj4 = new Videojuego();
+        Videojuego vj5 = new Videojuego("Genshin Impact", 3);
+        Videojuego[] videojuegos = {vj1, vj2, vj3, vj4, vj5};
+
+        serie1.entregar();
+        serie3.entregar();
+        serie5.entregar();
+        vj2.entregar();
+        vj3.entregar();
+
+        int contadorSeriesEntregadas = 0;
+        int contadorVideojuegosEntregados = 0;
+
+        Videojuego mayorHorasEstimadas = videojuegos[0];
+        Serie mayorTemporadas = series[0];
+
+        for(Videojuego videojuego : videojuegos){
+            if(videojuego.isEntregado()){
+                System.out.println("El videojuego "+videojuego.titulo+" está entregado.");
+                videojuego.devolver();
+                contadorVideojuegosEntregados += 1;
             }
+            mayorHorasEstimadas = (Videojuego)mayorHorasEstimadas.compareTo(videojuego);
+        }
+
+        for(Serie serie : series){
+            if(serie.isEntregado()){
+                System.out.println("La serie "+serie.titulo+" está entregada.");
+                serie.devolver();
+                contadorSeriesEntregadas += 1;
+            }
+            mayorTemporadas = (Serie)mayorTemporadas.compareTo(serie);
+        }
+
+        System.out.println("La cantidad de videojuegos entregados es: "+contadorVideojuegosEntregados+".");
+        System.out.println("La cantidad de series entregadas es: "+contadorSeriesEntregadas+".");
+        System.out.println("\nLa serie con mayor temporadas es: ");
+        System.out.println(mayorTemporadas);
+        System.out.println("\nEl videojuego con mayor cantidad de horas estimadas es: ");
+        System.out.println(mayorHorasEstimadas);
+    }
+}
+
+    //ejercicio 17
+    /*Lavadora lav1 = new Lavadora();
+    Lavadora lav2 = new Lavadora(100, 50);
+    Lavadora lav3 = new Lavadora(80);
+    Television tv1 = new Television();
+    Television tv2 = new Television(200, 25);
+    Television tv3 = new Television(55, true);
+    Television tv4 = new Television(43, false);
+    Electrodomesticos batidora = new Electrodomesticos();
+    Electrodomesticos licuadora = new Electrodomesticos(100, 1);
+    Electrodomesticos cafetera = new Electrodomesticos(60, "Negro", 'C', 1.5);
+
+    Electrodomesticos[] productos = {lav1, lav2, lav3, tv1, tv2, tv3, tv4, batidora, licuadora, cafetera};
+    double precioTotalLavadora = 0;
+    double precioTotalTelevision = 0;
+    double precioTotalElectrodomesticos = 0;
+    double precio;
+        for (Electrodomesticos producto : productos) {
+                if(producto.getClass() == Lavadora.class){
+        precio = ((Lavadora) producto).precioFinal(((Lavadora) producto).getCarga());
+        precioTotalLavadora += precio;
+        precioTotalElectrodomesticos += precio;
+        System.out.println("Soy una lavadora y mi precio final es de: "+precio+"€.");
+        } else if(producto.getClass() == Television.class){
+        precio = ((Television) producto).precioFinal(((Television) producto).resolucion, ((Television) producto).sintonizadorTDT);
+        precioTotalTelevision += precio;
+        precioTotalElectrodomesticos += precio;
+        System.out.println("Soy una televisión y mi precio final es de: "+precio+"€.");
+        } else if(producto.getClass() == Electrodomesticos.class){
+        precio = producto.precioFinal(producto.precioBase, producto.consumoEnergetico, producto.peso);
+        precioTotalElectrodomesticos += precio;
+        System.out.println("Soy un electrodoméstico y mi precio final es de: "+precio+"€.");
+        }
         }
         System.out.println("\nEl precio total de televisiones es: "+precioTotalTelevision+"€.");
         System.out.println("El precio total de lavadoras es: "+precioTotalLavadora+"€.");
         System.out.println("El precio total de electrodomésticos (incluye televisiones y lavadoras) es: "+precioTotalElectrodomesticos+"€.");
-    }
-}
-
 
 
         //ejercicio 16
@@ -133,7 +184,7 @@ public class Main {
     //ejercicio 15
     /*int opciones;
         do{
-                System.out.println("****** GESTIÓN CINEMATOGRÁFICA ******\n" +
+                System.out.println("****** GESTIÓN CINEMATOGRAFICA ******\n" +
                 "1- NUEVO ACTOR\n" +
                 "2- BUSCAR ACTOR\n" +
                 "3- ELIMINAR ACTOR\n" +
