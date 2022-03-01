@@ -4,17 +4,37 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
+        //EJERCICIO 8
 
-        //EJERCICIO 7
         Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese un día de la semana: ");
+        String day = input.nextLine();
+        switch(day.toLowerCase()){
+            case "domingo":
+                System.out.println("El día "+day+" es un día no laboral.");
+                break;
+            case "lunes":
+            case "martes":
+            case "miércoles":
+            case "jueves":
+            case "viernes":
+            case "sábado":
+                System.out.println("El día "+day+" es un día laboral.");
+                break;
+        }
+    }
+}
+        //EJERCICIO 7
+       /* Scanner input = new Scanner(System.in);
         double num;
         do{
             System.out.println("Ingrese un número: ");
             num = input.nextDouble();
         }while(num < 0);
         System.out.println("El número "+num+" es mayor o igual a 0.");
-    }
-}
+
+        */
+
 //Ejercicio 6
         /*for(int i = 1; i <= 100; i++){
             if((i % 2) == 0)
