@@ -4,15 +4,35 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
-    //Ejercicio 10
+        //ejercicio 11
         Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese una frase: ");
+        String frasePasada = input.nextLine();
+        int contador = 0;
+        for(int i = 0; i < frasePasada.length(); i++){
+            char character = frasePasada.charAt(i);
+            switch(character){
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    contador += 1;
+                    break;
+                default:
+                    break;
+                }
+        }
+    }
+}
+    //Ejercicio 10
+        /*Scanner input = new Scanner(System.in);
         System.out.println("Ingrese una frase: ");
         String frase = input.nextLine();
         String newfrase = frase.replaceAll("\\s+", "");
         System.out.println("La nueva frase es: "+newfrase);
 
-    }
-}
+         */
 
 //EJERCIIO 9
        /* String remplazar = "La sonrisa sera la mejor arma contra la tristeza";
