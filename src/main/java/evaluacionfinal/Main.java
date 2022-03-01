@@ -4,17 +4,26 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
-        //EJERCIIO 9
-        String remplazar = "La sonrisa sera la mejor arma contra la tristeza";
+    //Ejercicio 10
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese una frase: ");
+        String frase = input.nextLine();
+        String newfrase = frase.replaceAll("\\s+", "");
+        System.out.println("La nueva frase es: "+newfrase);
+
+    }
+}
+
+//EJERCIIO 9
+       /* String remplazar = "La sonrisa sera la mejor arma contra la tristeza";
         String newAdicional = remplazar.replace('a', 'e');
         Scanner input = new Scanner(System.in);
         System.out.println("Ingrese una frase (adicional): ");
         String ingresado = input.nextLine();
         newAdicional = newAdicional + " " + ingresado;
         System.out.println("La nueva cadena es: "+newAdicional);
-    }
-}
 
+        */
         //EJERCICIO 8
 
         /*Scanner input = new Scanner(System.in);
