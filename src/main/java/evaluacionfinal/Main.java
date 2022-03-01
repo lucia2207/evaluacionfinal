@@ -4,9 +4,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
+        //EJERCIIO 9
+        String remplazar = "La sonrisa sera la mejor arma contra la tristeza";
+        String newAdicional = remplazar.replace('a', 'e');
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese una frase (adicional): ");
+        String ingresado = input.nextLine();
+        newAdicional = newAdicional + " " + ingresado;
+        System.out.println("La nueva cadena es: "+newAdicional);
+    }
+}
+
         //EJERCICIO 8
 
-        Scanner input = new Scanner(System.in);
+        /*Scanner input = new Scanner(System.in);
         System.out.println("Ingrese un día de la semana: ");
         String day = input.nextLine();
         switch(day.toLowerCase()){
@@ -21,9 +32,8 @@ public class Main {
             case "sábado":
                 System.out.println("El día "+day+" es un día laboral.");
                 break;
-        }
-    }
-}
+
+         */
         //EJERCICIO 7
        /* Scanner input = new Scanner(System.in);
         double num;
